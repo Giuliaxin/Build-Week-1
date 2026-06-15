@@ -15,93 +15,77 @@
 */
 const QUESTIONS = [
   {
-    question: "Cliccare su 'Accetto i termini' senza leggerli è la mia firma su un patto col diavolo digitale in cambio di comodità.",
-    correct_answer: "Vero",
-    incorrect_answers: ["Falso"],
+    question: "Cosa significa l'acronimo CPU?",
+    correct_answer: "Central Processing Unit",
+    incorrect_answers: [
+      "Central Process Unit",
+      "Computer Personal Unit",
+      "Central Processor Unit",
+    ],
   },
   {
-    question: "Il sistema che mi obbliga a cambiare password ogni mese lo fa esclusivamente perché ha a cuore la mia salute mentale e il mio benessere interiore.",
+    question:
+      "In Java, quale keyword si usa per impedire che una variabile venga modificata?",
+    correct_answer: "final",
+    incorrect_answers: ["static", "private", "public"],
+  },
+  {
+    question: "Il logo di Snapchat è una campana.",
     correct_answer: "Falso",
     incorrect_answers: ["Vero"],
   },
   {
-    question: "Il sito ti avvisa: 'La password deve essere diversa dalla precedente'. Qual è la tua strategia di sopravvivenza?",
-    correct_answer: "Cambio il carattere speciale da ! a ? (la domanda riflette il mio stato d'animo).",
-    incorrect_answers: [
-      "Aggiungo un '1' alla fine della precedente.",
-      "Inizio a guardare oggetti nella stanza in cerca di ispirazione filosofica.",
-      "Abbandono il tentativo e decido che non ho davvero bisogno di quell'account.",
-    ],
-  },
-  {
-    question: "Hai cliccato su 'Password dimenticata'. Qual è lo stadio emotivo predominante?",
-    correct_answer: "Negazione ('L'avevo scritta da qualche parte, lo giuro!')",
-    incorrect_answers: [
-      "Rabbia ('Ma come, l'ho creata ieri!')",
-      "Accettazione ('Il mio Io digitale è morto, sono libero')",
-      "Speranza ('Forse stavolta l'email di recupero arriva davvero')",
-    ],
-  },
-  {
-    question: "Domanda di sicurezza: 'Nome del tuo primo animale domestico'. Perché questa domanda è un attacco alla tua privacy?",
-    correct_answer: "Perché il mio criceto non aveva un nome, era solo 'Criceto', e questo mi fa sentire poco originale.",
-    incorrect_answers: [
-      "Perché rivela dettagli intimi della mia infanzia che non voglio condividere con un server.",
-      "Perché la risposta è troppo ovvia per gli hacker e troppo complessa per il mio Io attuale.",
-      "Perché mi costringe a ricordare quanto ero felice prima di diventare un adulto che dimentica le password.",
-    ],
-  },
-  {
-    question: "L'autenticazione a due fattori ti chiede un codice inviato sul telefono. Il telefono è in un'altra stanza. Cosa fai?",
-    correct_answer: "Cerchi di indovinare il codice (probabilità di successo: 0,0001%).",
-    incorrect_answers: [
-      "Ti alzi e lo prendi, sentendoti un atleta impegnato in una maratona.",
-      "Rimani seduto fissando il vuoto, rassegnato alla sconfitta digitale.",
-      "Decidi che quel servizio non ti serve più, la tua vita era più semplice senza.",
-    ],
-  },
-  {
-    question: "Usi la stessa password per il conto in banca e per l'app delle ricette. Qual è il rischio psicologico principale?",
-    correct_answer: "Nessuno, tanto nessuno hackererebbe un conto in banca vuoto.",
-    incorrect_answers: [
-      "Che gli hacker rubino la mia segreta ricetta del tiramisù.",
-      "Che il sistema bancario mi giudichi per le mie abitudini alimentari compulsive.",
-      "La fine della distinzione tra 'Io Produttivo' e 'Io Edonista'.",
-    ],
-  },
-  {
-    question: "Il Password Manager ti promette la salvezza. Perché è ironico?",
-    correct_answer: "Tutte le precedenti.",
-    incorrect_answers: [
-      "Perché devo ricordare una Master Password, che finirò inevitabilmente per dimenticare.",
-      "Perché mi fido di un software più di quanto mi fidi della mia stessa memoria.",
-      "Perché è solo un altro account di cui devo gestire la password.",
-    ],
-  },
-  {
-    question: "Il test CAPTCHA che mi chiede di identificare i semafori è stato progettato per premiare la mia intelligenza superiore rispetto alle macchine.",
+    question:
+      "I puntatori sono stati introdotti in C++ e non c'erano nel linguaggio C originale.",
     correct_answer: "Falso",
     incorrect_answers: ["Vero"],
   },
   {
-    question: "Qual è la definizione di 'Password Perfetta' secondo la psicologia dell'Erosione dell'Io?",
-    correct_answer: "Non esiste, l'unica password perfetta è quella che non serve a nulla perché abbiamo smesso di accedere.",
+    question:
+      "Qual è il formato immagine più usato per i loghi nel database di Wikimedia?",
+    correct_answer: ".svg",
+    incorrect_answers: [".png", ".jpeg", ".gif"],
+  },
+  {
+    question: "Cosa significa l'acronimo CSS?",
+    correct_answer: "Cascading Style Sheets",
     incorrect_answers: [
-      "Una che contiene il nome di un ex, perché è indelebile.",
-      "Una che non ricordi, ma che il computer ricorda per te.",
-      "Una che è un'imprecazione mascherata da cifre.",
+      "Counter Strike: Source",
+      "Corrective Style Sheets",
+      "Computer Style Sheets",
     ],
+  },
+  {
+    question: "Qual è il nome in codice del sistema operativo Android 7.0?",
+    correct_answer: "Nougat",
+    incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
+  },
+  {
+    question: "Qual era il limite originale di caratteri di un Tweet?",
+    correct_answer: "140",
+    incorrect_answers: ["120", "160", "100"],
+  },
+  {
+    question: "Linux è stato creato come alternativa a Windows XP.",
+    correct_answer: "Falso",
+    incorrect_answers: ["Vero"],
+  },
+  {
+    question:
+      "Quale linguaggio di programmazione condivide il nome con un'isola dell'Indonesia?",
+    correct_answer: "Java",
+    incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
 
 /* Costanti del quiz */
 const TOTAL_QUESTIONS = QUESTIONS.length;
-const PASS_THRESHOLD = 60; 
-const FEEDBACK_DELAY = 1500; 
-const TIMER_DURATION = 20; 
+const PASS_THRESHOLD = 60; // percentuale minima per "Promosso"
+const FEEDBACK_DELAY = 1500; // ms di attesa dopo risposta prima di avanzare
+const TIMER_DURATION = 20; // secondi per ogni domanda
 
 /* Stato globale */
-let currentScreen = "welcome"; 
+let currentScreen = "welcome"; // "welcome" | "quiz" | "results"
 let currentQuestion = 0;
 let score = 0;
 let timerId = null;
@@ -137,13 +121,15 @@ function render() {
 function renderWelcome(container) {
   container.innerHTML = `
     <div class="welcome">
-      <h1>Erosione dell'Io</h1>
-      <p>Un esame di coscienza digitale. 10 domande, 20 secondi per ciascuna.</p>
+      <h1>Benvenuto al tuo esame</h1>
+      <p>Una serie di 10 domande sul mondo dell'informatica e del web. Per ogni domanda hai 20 secondi di tempo.</p>
+      
       <ul>
-        <li>Ogni domanda è a tempo.</li>
-        <li>Una volta scelta la risposta, non si torna indietro.</li>
-        <li>Dimostra che la tua identità è ancora integra.</li>
+        <li>Ogni domanda è a tempo e può ricevere una sola risposta.</li>
+        <li>Una volta cliccata una risposta, la domanda è chiusa.</li>
+        <li>Il quiz dura circa 3 minuti</li>
       </ul>
+      
       <button type="button" id="start-btn">Inizia</button>
     </div>
   `;
@@ -183,6 +169,7 @@ function renderQuiz(container) {
   });
   startTimer();
 }
+
 
 function startTimer() {
   /* (G) Reset del timer */
@@ -244,6 +231,7 @@ function handleAnswer(button, answer) {
   const correctAnswer = shuffledQuestions[currentQuestion].correct_answer;
   if (answer === correctAnswer) {
     button.classList.add('correct');
+
     score++;
   } else {
     button.classList.add('wrong');
@@ -274,8 +262,10 @@ function advance() {
 
 /* (G) Genera la schermata di riepilogo con il punteggio e gestisce il riavvio del quiz */
 function renderResults(container) {
-  const percentage = Math.round((score / TOTAL_QUESTIONS) * 100);
+  const percentage = (score / TOTAL_QUESTIONS) * 100;
   const isPassed = percentage >= PASS_THRESHOLD;
+
+  /* percentuali due barre */
   const wrongAnswer = TOTAL_QUESTIONS - score;
   const incorrectPercentage = (wrongAnswer / TOTAL_QUESTIONS) * 100;
 
@@ -291,17 +281,17 @@ function renderResults(container) {
       </h2>
       
       <div class="resultBar">
-        <div style="font-weight: bold; color:#666A7B;">Corrette</div>
+        <div style="float: left;font-weight: bold;color:#666A7B;">Corrette </div>
         <div class="progressBarC">
-          <div class="progressBarT" id="bar-c" style="width: 0%"></div>
+          <div class="progressBarT" style="width: ${percentage}%"></div>
         </div>
         <div class="numeriBarra">${score}/${TOTAL_QUESTIONS}</div>
       </div>
       
       <div class="resultBar">
-        <div style="font-weight: bold; color:#666A7B;">Sbagliate</div>
+        <div style="float: left;font-weight: bold;color:#666A7B;">Sbagliate</div>
         <div class="progressBarD">
-          <div class="progressBarF" id="bar-f" style="width: 0%"></div>
+          <div class="progressBarF" style="width: ${incorrectPercentage}%"></div>
         </div>
         <div class="numeriBarra">${wrongAnswer}/${TOTAL_QUESTIONS}</div>
       </div>
@@ -309,18 +299,12 @@ function renderResults(container) {
     </div>
   `;
 
-  /* (G) Il browser attende 100ms per mostrare lo stato iniziale (0%), 
-  così che l'animazione di riempimento sia visibile invece di apparire istantanea */
-  setTimeout(() => {
-    document.getElementById("bar-c").style.width = percentage + "%";
-    document.getElementById("bar-f").style.width = incorrectPercentage + "%";
-  }, 100);
-
   // Listener per il bottone di riavvio
   document.getElementById("restart-btn").addEventListener("click", () => {
     currentScreen = "welcome";
     render();
   });
+
 }
 
-render(); 
+render();
